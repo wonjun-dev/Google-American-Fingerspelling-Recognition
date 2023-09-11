@@ -1,0 +1,28 @@
+python t_enc/train.py \
+--gpu 7 \
+--exp_name "train_hdist_test_awp" \
+--data_type "train" \
+--data_ver "v6" \
+--val_fold 1 \
+--epochs 300 \
+--late_dropout_ver="v1" \
+--late_dropout 0.5 \
+--late_dropout_step 15 \
+--use_major \
+--augment \
+--max_len 460 \
+--use_affine \
+--use_flip_lr \
+--use_resample \
+--awp_step 0 \
+--awp_lambda 0.1 \
+--warmup_epoch 12 \
+--target_lr 0.0015 \
+--hidden_dim 352 \
+--batch_size 128 \
+--weight_decay 0.1 \
+--clip_grads 1.0 \
+--expand_ratio 4 \
+--rate 0.2
+python t_enc/test_dj.py \
+--gpu 7
